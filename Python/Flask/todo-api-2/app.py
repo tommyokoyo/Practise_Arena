@@ -31,6 +31,14 @@ def get_task(task_id):
         abort(404)
     return jsonify({'task':task[0]})
 
+@app.route('/status', methods=['GET'])
+def get_status():
+    return jsonify({'status': 'ok'})
+
+@app.route('/aes/status', methods=['POST'])
+def get_aes_status():
+    return jsonify({'status': 'ok'})
+
 # add tasks to database
 @app.route('/todo/api/v1.0/tasks', methods=['POST'])
 def create_task():
